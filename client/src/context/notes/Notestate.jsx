@@ -10,7 +10,7 @@ const NoteState = (props) => {
   //Get all notes
   const getNotes = async () => {
     //  Api call
-    const responce = await fetch(`http://localhost:5000/api/notes/fetchallnotes/`, {
+    const responce = await fetch(`https://inotesbook-backend.onrender.com/api/notes/fetchallnotes/`, {
       method: 'GET',
       headers: {
         'content-Type': 'application/json',
@@ -24,7 +24,7 @@ const NoteState = (props) => {
   //Add a note
   const addNote = async (title, description, tag) => {
     // Api call
-    const responce = await fetch(`http://localhost:5000/api/notes/addnote`, {
+    const responce = await fetch(`https://inotesbook-backend.onrender.com/api/notes/addnote`, {
       method: 'POST',
       headers: {
         'content-Type': 'application/json',
@@ -41,7 +41,7 @@ const NoteState = (props) => {
   //Delete a note
   const deleteNote = async (id) => {
     // Api call
-    const responce = await fetch(`http://localhost:5000/api/notes/deletenote/${id}`, {
+    const responce = await fetch(`https://inotesbook-backend.onrender.com/api/notes/deletenote/${id}`, {
       method: 'DELETE',
       headers: {
         'content-Type': 'application/json',
@@ -57,7 +57,7 @@ const NoteState = (props) => {
   //Edit a note
   const editNote = async (id, title, description, tag) => {
     // API Call
-    const responce = await fetch(`http://localhost:5000/api/notes/updatenote/${id}`, {
+    const responce = await fetch(`https://inotesbook-backend.onrender.com/api/notes/updatenote/${id}`, {
       method: 'PUT',
       headers: {
         'content-Type': 'application/json',
