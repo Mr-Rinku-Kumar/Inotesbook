@@ -1,0 +1,148 @@
+:root {
+    --primary-gradient: linear-gradient(to right, #6a11cb, #2575fc);
+    --form-bg: rgba(255, 255, 255, 0.95);
+    --focus-glow: rgba(37, 117, 252, 0.3);
+    --btn-hover: #1a56c0;
+  }
+  
+  .signup-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: var(--primary-gradient);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      padding: 2rem 1rem;
+      position: relative;
+      overflow: hidden;
+  }
+  
+  /* Glassmorphism Effect for Form */
+  .signup-form {
+      background: var(--form-bg);
+      backdrop-filter: blur(12px);
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      width: min(90%, 400px);
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .signup-form:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Enhanced Input Fields */
+  .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-bottom: 1.25rem;
+  }
+  
+  .form-control:hover {
+      border-color: #a0a0a0;
+  }
+  
+  .form-control:focus {
+      border-color: #2575fc;
+      box-shadow: 0 0 0 3px var(--focus-glow);
+  }
+  
+  /* Modern Button Style */
+  .btn-primary {
+      background: var(--primary-gradient);
+      border: none;
+      padding: 14px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+  }
+  
+  .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+          45deg,
+          transparent 25%,
+          rgba(255, 255, 255, 0.1) 50%,
+          transparent 75%
+      );
+      transform: rotate(45deg);
+      transition: all 0.5s ease;
+  }
+  
+  .btn-primary:hover {
+      background: linear-gradient(to right, #2575fc, #6a11cb);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 117, 252, 0.3);
+  }
+  
+  .btn-primary:active {
+      transform: translateY(1px);
+      box-shadow: 0 4px 12px rgba(37, 117, 252, 0.2);
+  }
+  
+  /* Enhanced Label Styling */
+  .form-label {
+      color: #2d2d2d;
+      font-weight: 500;
+      display: block;
+      text-align: left;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+  }
+  
+  /* Error Message Styling (Add HTML elements for this) */
+  .error-message {
+      color: #dc2626;
+      font-size: 0.9rem;
+      margin-top: -0.5rem;
+      margin-bottom: 1rem;
+      text-align: left;
+      display: none;
+  }
+  
+  /* Responsive Design Improvements */
+  @media (max-width: 768px) {
+      .signup-container {
+          padding: 1.5rem;
+      }
+      
+      .signup-form {
+          padding: 2rem;
+          border-radius: 12px;
+      }
+  }
+  
+  @media (max-width: 480px) {
+      .signup-title {
+          font-size: 1.75rem;
+      }
+      
+      .btn-primary {
+          padding: 12px;
+      }
+      
+      .form-control {
+          padding: 10px 14px;
+      }
+  }

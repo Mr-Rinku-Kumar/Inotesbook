@@ -1,0 +1,173 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #6a11cb, #2575fc);
+    --form-bg: rgba(255, 255, 255, 0.95);
+    --focus-glow: rgba(37, 117, 252, 0.3);
+    --btn-hover: linear-gradient(135deg, #1a56c0, #5a0fb5);
+  }
+  
+  .login-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: var(--primary-gradient);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      padding: 2rem 1rem;
+      position: relative;
+      overflow: hidden;
+  }
+  
+  /* Glassmorphism Form */
+  .login-form {
+      background: var(--form-bg);
+      backdrop-filter: blur(12px);
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      width: min(90%, 400px);
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .login-form:hover {
+      transform: translateY(-2px) perspective(1000px) rotateX(1deg) rotateY(1deg);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  .login-title {
+      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+      position: relative;
+      display: inline-block;
+  }
+  
+  .login-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 2px;
+  }
+  
+  /* Enhanced Input Fields */
+  .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-bottom: 1.25rem;
+      background: rgba(255, 255, 255, 0.9);
+  }
+  
+  .form-control:hover {
+      border-color: #a0a0a0;
+      background: white;
+  }
+  
+  .form-control:focus {
+      border-color: #2575fc;
+      box-shadow: 0 0 0 3px var(--focus-glow);
+  }
+  
+  /* Animated Gradient Button */
+  .btn-primary {
+      background: var(--primary-gradient);
+      border: none;
+      padding: 14px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      backface-visibility: hidden;
+  }
+  
+  .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+          120deg,
+          transparent,
+          rgba(255, 255, 255, 0.15),
+          transparent
+      );
+      transition: all 0.6s ease;
+  }
+  
+  .btn-primary:hover {
+      background: var(--btn-hover);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(37, 117, 252, 0.3);
+  }
+  
+  .btn-primary:hover::before {
+      left: 100%;
+  }
+  
+  .btn-primary:active {
+      transform: translateY(1px) scale(0.98);
+  }
+  
+  /* Additional Features */
+  .password-toggle {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #666;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+      .login-container {
+          padding: 1.5rem;
+      }
+      
+      .login-form {
+          padding: 2rem;
+          border-radius: 12px;
+      }
+      
+      .login-title {
+          font-size: 2rem;
+      }
+  }
+  
+  @media (max-width: 480px) {
+      .login-title {
+          font-size: 1.75rem;
+      }
+      
+      .btn-primary {
+          padding: 12px;
+      }
+      
+      .form-control {
+          padding: 10px 14px;
+      }
+      
+      .login-title::after {
+          width: 40px;
+          bottom: -6px;
+      }
+  }
