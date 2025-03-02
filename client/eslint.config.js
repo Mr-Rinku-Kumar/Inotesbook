@@ -16,6 +16,9 @@ export default [
         sourceType: 'module',
       },
     },
+    server: {
+      hmr: false  // Hot Module Reloading को बंद कर दो
+    },
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,

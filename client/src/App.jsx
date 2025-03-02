@@ -9,6 +9,7 @@ import Alert from './components/Alert';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Footer from './components/Footer';
+import './serviceWorker';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
